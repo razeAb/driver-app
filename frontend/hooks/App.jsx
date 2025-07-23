@@ -1,7 +1,7 @@
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
-import EarningsScreen from "./screens/EarningsScreen.jsx";
+import EarningsScreen from "./frontend/hooks/screens/EarningsScreen.js";
 import LoginScreen from "./screens/LoginScreen.jsx";
 import OrderDetailsScreen from "./screens/OrderDetailsScreen.jsx";
 import OrdersScreen from "./screens/OrdersScreen.jsx";

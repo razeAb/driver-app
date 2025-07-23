@@ -2,7 +2,7 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { NavigationContainer } from "@react-navigation/native";
 import React from "react";
 import { AuthProvider, useAuth } from "./context/AuthContext.jsx";
-import EarningsScreen from "./screens/EarningScreens.jsx";
+import EarningsScreen from "./screens/EarningScreen.jsx";
 import LoginScreen from "./screens/LoginScreen.jsx";
 import OrdersScreen from "./screens/OrdersScreen.jsx";
 import ProfileScreen from "./screens/ProfileScreen.jsx";

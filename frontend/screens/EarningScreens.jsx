@@ -1,12 +1,20 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { ActivityIndicator, FlatList, StyleSheet, Text, View } from "react-native";
+import { useAuth } from "../context/AuthContext.jsx"; // ✅
 
-const EarningsScreen = ({ route }) => {
-  const token = route.params?.token;
+const EarningsScreen = ({ navigation }) => {
+  const { token } = useAuth(); // ✅
   const [earnings, setEarnings] = useState(0);
   const [orders, setOrders] = useState([]);
   const [loading, setLoading] = useState(true);
+
+  // 🔒 Redirect if not logged in
+  useEffect(() => {
+    if (!token) {
+      navigation.navigate("Login");
+    }
+  }, [token]);
 
   const fetchEarnings = async () => {
     try {
@@ -26,8 +34,8 @@ const EarningsScreen = ({ route }) => {
   };
 
   useEffect(() => {
-    fetchEarnings();
-  }, []);
+    if (token) fetchEarnings();
+  }, [token]);
 
   if (loading) {
     return <ActivityIndicator size="large" style={{ marginTop: 40 }} />;

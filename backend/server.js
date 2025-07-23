@@ -1,7 +1,12 @@
 require("dotenv").config();
 
+const express = require("express");
+const mongoose = require("mongoose");
 const driverRoutes = require("./routes/driverRoutes");
 const driverOrdersRoutes = require("./routes/driverOrdersRoutes");
+
+const app = express();
+app.use(express.json());
 
 app.use("/api/driver", driverRoutes);
 app.use("/api/driver/orders", driverOrdersRoutes);

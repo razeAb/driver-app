@@ -6,14 +6,23 @@
     "checkJs": false,
     "noEmit": true,
     "target": "ESNext",
-    "module": "Node16", // ✅ Must match moduleResolution
+    "module": "Node16",
     "moduleResolution": "node16",
     "resolveJsonModule": true,
     "strict": true,
     "paths": {
-      "@/*": ["./*"]
+      "@/*": [
+        "./*"
+      ]
     }
   },
-  "include": ["**/*.ts", "**/*.tsx", "**/*.js", "**/*.jsx", ".expo/types/**/*.ts", "expo-env.d.ts"],
-  "exclude": ["node_modules"]
+  "include": [
+    "**/*.ts",
+    "**/*.tsx",
+    "**/*.js",
+    "**/*.jsx"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
 }

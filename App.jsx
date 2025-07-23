@@ -1,17 +1,19 @@
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { NavigationContainer } from "@react-navigation/native";
 import React from "react";
-import { AuthProvider, useAuth } from "./context/AuthContext.jsx";
-import EarningsScreen from "./screens/EarningScreen.jsx";
-import LoginScreen from "./screens/LoginScreen.jsx";
-import OrdersScreen from "./screens/OrdersScreen.jsx";
-import ProfileScreen from "./screens/ProfileScreen.jsx";
+
+// Context provider and auth hook
+import { AuthProvider, useAuth } from "./frontend/context/AuthContext";
+
+// Screens (adjust imports if needed)
+import EarningsScreen from "./frontend/screens/EarningsScreen";
+import LoginScreen from "./frontend/screens/LoginScreen";
+import OrdersScreen from "./frontend/screens/OrdersScreen";
+import ProfileScreen from "./frontend/screens/ProfileScreen";
 
 const Tab = createBottomTabNavigator();
 
 const Tabs = () => {
-  const { token } = useAuth();
-
   return (
     <Tab.Navigator>
       <Tab.Screen name="Active Orders" component={OrdersScreen} />

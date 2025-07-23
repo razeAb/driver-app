@@ -5,8 +5,8 @@ const AuthContext = createContext();
 export const AuthProvider = ({ children }) => {
   const [token, setToken] = useState(null);
 
-  const login = (newToken) => {
-    setToken(newToken);
+  const login = (token) => {
+    setToken(token);
   };
 
   const logout = () => {
@@ -16,5 +16,4 @@ export const AuthProvider = ({ children }) => {
   return <AuthContext.Provider value={{ token, login, logout }}>{children}</AuthContext.Provider>;
 };
 
-// Custom hook for using auth
 export const useAuth = () => useContext(AuthContext);
